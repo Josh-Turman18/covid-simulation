@@ -201,7 +201,7 @@ public class Control {
 			Rectangle[] newR = view.r;
 			
 			Rectangle personRect = new Rectangle(p.x,p.y, p.width, p.height);
-			for(int i = 0; i < newWalls.length;i++)
+			for(int i = 0 ; i < newWalls.length ; i++)
 			{
 				if(newR[i].intersects(personRect))
 					if(newWalls[i].vertical)
