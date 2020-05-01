@@ -80,6 +80,12 @@ public class Building extends JPanel implements ActionListener{
 		control.paintPersons(g); // repaint all objects in simulation
 		
 	} 
+	
+	/* This class creates the walls for the simulation */
+	public void createWalls()
+	{
+		
+	}
 		
 	
 }
