@@ -92,7 +92,7 @@ public class Building extends JPanel implements ActionListener{
 		
 		//events
 		super.paintComponent(g); // a necessary call to the parent paint method, required for proper screen refreshing
-		paintWalls(g);
+		this.paintWalls(g);
 		control.paintPersons(g); // repaint all objects in simulation
 		
 	} 
