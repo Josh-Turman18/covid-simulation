@@ -114,7 +114,7 @@ public class Control {
 		 * Call Back method for View
 		 * paints/repaints model of graphic objects repressing person objects in the frame 
 		 */
-		public void paintPersons(Graphics g) {
+		public void paintPersons(Graphics g, Wall[] sendWalls, Rectangle[] sendR) {
 			
 			//find the Person in the Model!
 			int index = 0;
@@ -123,7 +123,7 @@ public class Control {
 					//for each unique pair invoke the collision detection code
 					pDot1.collisionDetector(pDot2);
 				}
-				personToWallCollision(pDot1);
+				personToWallCollision(pDot1, sendWalls, sendR);
 				pDot1.healthManager(); //manage health values of the Person
 				pDot1.velocityManager(); //manage social distancing and/or roaming values of the Person
 				
@@ -196,15 +196,13 @@ public class Control {
 //		}
 		
 
-		public void personToWallCollision(Person p) {
-			Wall[] newWalls = view.walls;
-			Rectangle[] newR = view.r;
-			
+		public void personToWallCollision(Person p, Wall[] walls, Rectangle[] r) {
+
 			Rectangle personRect = new Rectangle(p.x,p.y, p.width, p.height);
-			for(int i = 0 ; i < newWalls.length ; i++)
+			for(int i = 0 ; i < walls.length ; i++)
 			{
-				if(newR[i].intersects(personRect))
-					if(newWalls[i].vertical)
+				if(r[i].intersects(personRect))
+					if(walls[i].vertical)
 					{
 						p.vx *= -1;
 					}
