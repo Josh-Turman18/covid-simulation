@@ -167,10 +167,10 @@ public class Control {
 		//static Rectangle[] r = {vWall1.getBounds(), hWall1.getBounds(), vWall2.getBounds(), hWall2.getBounds(),
 		//		vWall3.getBounds(), hWall3.getBounds(), vWall4.getBounds(), hWall4.getBounds()};
 		
-		(view.createWalls(g));
+
 		
 		
-		public void paintWalls(Graphics g) {
+		//public void paintWalls(Graphics g) {
 
 			//draws vertical walls
 			//g.drawImage(vWall1.getImage(), vWall1.getX(), vWall1.getY(), view);
@@ -193,16 +193,17 @@ public class Control {
 		//	g.drawString("Board and Brew", 5, 440);
 		//	g.drawString("Mr. M's House", 590, 440);
 			
-		}
+//		}
 		
 
 		public void personToWallCollision(Person p) {
 			
+			
 			Rectangle personRect = new Rectangle(p.x,p.y, p.width, p.height);
-			for(int i = 0; i < walls.length;i++)
+			for(int i = 0; i < view.walls.length;i++)
 			{
-				if(r[i].intersects(personRect))
-					if(walls[i].vertical)
+				if(view.r[i].intersects(personRect))
+					if(view.walls[i].vertical)
 					{
 						p.vx *= -1;
 					}

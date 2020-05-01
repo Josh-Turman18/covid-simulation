@@ -22,17 +22,17 @@ import javax.swing.Timer;
 */
 public class Building extends JPanel implements ActionListener{
 	// new location for walls
-	Wall vWall1 = new Wall(550, 0, "SocialDistancingImages/wall2.png", true);
-	Wall vWall2 = new Wall(200, 0, "SocialDistancingImages/wall2.png", true);
-	Wall vWall3 = new Wall(550, 400, "SocialDistancingImages/wall2.png", true);
-	Wall vWall4 = new Wall(200, 400, "SocialDistancingImages/wall2.png", true);
+	public Wall vWall1 = new Wall(550, 0, "SocialDistancingImages/wall2.png", true);
+	public Wall vWall2 = new Wall(200, 0, "SocialDistancingImages/wall2.png", true);
+	public Wall vWall3 = new Wall(550, 400, "SocialDistancingImages/wall2.png", true);
+	public Wall vWall4 = new Wall(200, 400, "SocialDistancingImages/wall2.png", true);
 	
-	Wall hWall1 = new Wall(620, 160, "SocialDistancingImages/wall1.png", false);
-	Wall hWall2 = new Wall(-25, 160, "SocialDistancingImages/wall1.png", false);
-	Wall hWall3 = new Wall(620, 400, "SocialDistancingImages/wall1.png", false);
-	Wall hWall4 = new Wall(-25, 400, "SocialDistancingImages/wall1.png", false);
-	Wall[] walls = {vWall1, hWall1, vWall2, hWall2, vWall3, hWall3, vWall4, hWall4};
-	Rectangle[] r = {vWall1.getBounds(), hWall1.getBounds(), vWall2.getBounds(), hWall2.getBounds(),
+	public Wall hWall1 = new Wall(620, 160, "SocialDistancingImages/wall1.png", false);
+	public Wall hWall2 = new Wall(-25, 160, "SocialDistancingImages/wall1.png", false);
+	public Wall hWall3 = new Wall(620, 400, "SocialDistancingImages/wall1.png", false);
+	public Wall hWall4 = new Wall(-25, 400, "SocialDistancingImages/wall1.png", false);
+	public Wall[] walls = {vWall1, hWall1, vWall2, hWall2, vWall3, hWall3, vWall4, hWall4};
+	public Rectangle[] r = {vWall1.getBounds(), hWall1.getBounds(), vWall2.getBounds(), hWall2.getBounds(),
 			vWall3.getBounds(), hWall3.getBounds(), vWall4.getBounds(), hWall4.getBounds()};
 	
 	
@@ -92,13 +92,13 @@ public class Building extends JPanel implements ActionListener{
 		
 		//events
 		super.paintComponent(g); // a necessary call to the parent paint method, required for proper screen refreshing
-		control.paintWalls(g);
+		paintWalls(g);
 		control.paintPersons(g); // repaint all objects in simulation
 		
 	} 
 	
 	/* This class creates the walls for the simulation */
-	public void createWalls(Graphics g)
+	public void paintWalls(Graphics g)
 	{	
 		//draws vertical walls
 		g.drawImage(vWall1.getImage(), vWall1.getX(), vWall1.getY(), this);
